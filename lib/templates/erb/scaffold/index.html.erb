@@ -14,7 +14,11 @@
 
   <tbody>
     <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
-      <tr>
+      <tr 
+      <% if ["Bug", "Issue", "Product", "Campaign"].include? singular_table_name.titleize -%>
+      class="w3-hover-green"
+      <% end -%>
+       >
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
         <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
 <% end -%>

@@ -34,7 +34,9 @@
 
   <tbody>
     <% @bugs.each do |bug| %>
-      <tr>
+      <tr 
+            class="w3-hover-green"
+             >
         <td><%= bug.code %></td>
         <td><%= bug.product %></td>
         <td><%= bug.component %></td>
